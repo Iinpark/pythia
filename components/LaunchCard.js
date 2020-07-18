@@ -35,15 +35,21 @@ const styles = StyleSheet.create({
   launchCard: {
     flexDirection: 'row',
     backgroundColor: 'rgba(255,255,255,0.3)',
+    
     width: 330,
+    
     alignItems: 'center',
     justifyContent: 'space-between',
+    
     borderTopLeftRadius: 60,
     borderBottomLeftRadius: 60,
     borderTopRightRadius: 3,
     borderBottomRightRadius: 3,
-    padding: 6,
+    
+    paddingVertical: 1,
     paddingLeft: 2,
+
+    marginVertical: 3,
   },
 
   launchCard__section: {

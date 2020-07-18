@@ -4,7 +4,8 @@ import { View, StyleSheet, Text } from 'react-native';
 const TextWidthUnderline = ({ value }) => {
   return (
     <View>
-      <Text style={{ color: 'white', textTransform: 'uppercase', fontSize: 11 }}>
+      <Text
+        style={{ color: 'white', textTransform: 'uppercase', fontSize: 11 }}>
         {value}
       </Text>
       <View style={styles.underline}></View>
@@ -15,9 +16,9 @@ const TextWidthUnderline = ({ value }) => {
 const styles = StyleSheet.create({
   underline: {
     borderBottomColor: 'white',
-    borderBottomWidth: 1,
     width: 70,
-    marginBottom: 2,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    marginBottom: 3,
   },
 });
 

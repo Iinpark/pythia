@@ -1,13 +1,19 @@
 import React from 'react';
-import { View, BackgroundImage, FlatList } from 'react-native';
+import { View, BackgroundImage, FlatList, StyleSheet } from 'react-native';
 import { LaunchCard } from '@components';
 
 const ScheduleScreen = () => {
   return (
-    <View>
+    <View style={styles.main}>
       <LaunchCard />
     </View>
   );
 };
 
 export default ScheduleScreen;
+
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+  },
+});
