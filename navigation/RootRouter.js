@@ -3,7 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 
+import { CustomDrawerContent } from '@components';
 import { AppHeaderCont } from '@containers';
+import { drawerStyle, labelStyle } from '@common';
 //screens
 import CompaniesScreen from './CompaniesScreen';
 import ScheduleScreen from './ScheduleScreen';
@@ -18,7 +20,10 @@ const DrawerNavigator = () => {
     <Drawer.Navigator
       initialRouteName="CompaniesScreen"
       drawerType="back"
-      backBehavior="none">
+      backBehavior="none"
+      drawerStyle={drawerStyle}
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
+      overlayColor="rgba(0.0.0.0)">
       <Drawer.Screen name="CompaniesScreen" component={CompaniesScreen} />
       <Drawer.Screen name="ScheduleScreen" component={ScheduleScreen} />
     </Drawer.Navigator>
@@ -42,7 +47,7 @@ const RootRouter = () => {
         headerMode="screen"
         screenOptions={{
           header: ({ navigation }) => {
-          return <AppHeaderCont navigation={navigation} />;
+            return <AppHeaderCont navigation={navigation} />;
           },
         }}>
         <MainStack.Screen name="LaunchStack" component={LaunchStackNavigator} />
