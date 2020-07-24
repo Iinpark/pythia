@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import Screen from './Screen';
 
 export default class LaunchScreen extends Component {
+  
   forRender = (
     <View>
       <Text>Я - Экран Пуска!!!</Text>

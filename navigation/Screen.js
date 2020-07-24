@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text, TouchableHighlight } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
+// TODO: REMOVE IMPORT BELOW
+import { actions } from '../storage/dataReducer';
 
 export default class Screen extends Component {
+  API = actions.fetchData;
   forRender() {}
   render() {
     return (
       <View style={styles.container}>
         <StatusBar style="light" />
+       
         {this.props.toRender}
       </View>
     );
