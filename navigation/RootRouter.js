@@ -18,7 +18,7 @@ const LaunchStack = createStackNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="CompaniesScreen"
+      initialRouteName="ScheduleScreen"
       drawerType="back"
       backBehavior="none"
       drawerStyle={drawerStyle}

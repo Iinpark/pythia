@@ -1,13 +1,21 @@
-import React from 'react'
-import { View } from 'react-native'
-import { LaunchCard } from "@components";
+import React from 'react';
+import { View } from 'react-native';
+import { LaunchCard } from '@components';
 
-export const LaunchCardCont = () => {
-    return (
-        <View>
-            <LaunchCard />
-        </View>
-    )
-}
+const LaunchCardCont = ({ vehicle, win_open, name, weather_icon }) => {
 
-export default LaunchCardCont
+  const date = new Date(win_open).toLocaleString();
+
+  return (
+    <View>
+      <LaunchCard
+        vehicle={vehicle}
+        win_open={win_open === null ? 'НЕИЗВЕСТНО' : date}
+        name={name}
+        weather_icon={weather_icon}
+      />
+    </View>
+  );
+};
+
+export default LaunchCardCont;
