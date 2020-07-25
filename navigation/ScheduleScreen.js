@@ -7,41 +7,37 @@ import {
   Text,
   TouchableHighlight,
 } from 'react-native';
-import { LaunchCard } from '@components';
+import { LaunchCardCont } from '@containers';
 import Screen from './Screen';
 import { connect } from 'react-redux';
 import { actions } from '../storage/dataReducer';
 
 class ScheduleScreen extends React.Component {
-  state = {
-    launches: this.props.state.launches,
-  };
-
-  forRender = (
-    <View style={styles.main}>
-      <TouchableHighlight onPress={this.props.fetchAll}>
-        <Text style={{ color: 'white' }}>НАЖМИ МЕНЯ</Text>
-      </TouchableHighlight>
-
-      <FlatList
-        data={ this.props.state.launchesи }
-        renderItem={({ item }) => {
-          return (
-            <LaunchCard
-              vehicle={item.vehicle.name}
-              win_open={item.win_open}
-              name={item.name}
-              weather_icon={item.weather_icon}
-            />
-          );
-        }}
-      />
-    </View>
-  );
+  componentDidMount() {
+    this.props.fetchAll();
+  }
 
   render() {
-    console.log('schedule SCREEN', this.state);
-    return <Screen toRender={this.forRender} />;
+    return (
+      <Screen>
+        <View style={styles.main}>
+          <FlatList
+            data={this.props.launches}
+            renderItem={({ item }) => {
+              return (
+                <LaunchCardCont
+                  key={item.key}
+                  vehicle={item.vehicle.name}
+                  win_open={item.win_open}
+                  name={item.name}
+                  weather_icon={item.weather_icon}
+                />
+              );
+            }}
+          />
+        </View>
+      </Screen>
+    );
   }
 }
 
@@ -61,7 +57,7 @@ const mapDispatch = (dispatch) => {
 
 const mapState = (state) => {
   return {
-    state: state,
+    launches: state.launches,
   };
 };
 export default connect(mapState, mapDispatch)(ScheduleScreen);

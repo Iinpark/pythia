@@ -30,8 +30,7 @@ export const reducer = (state = initialState, action) => {
   const { data } = action;
   switch (action.type) {
     case types.FETCH_OK:
-      return { ...state, launches: data.result };
-
+      return { ...state, launches: data.result};
     default:
       return { ...state };
   }

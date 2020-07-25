@@ -12,8 +12,7 @@ export default class Screen extends Component {
     return (
       <View style={styles.container}>
         <StatusBar style="light" />
-       
-        {this.props.toRender}
+        {this.props.children}
       </View>
     );
   }

@@ -1,25 +1,24 @@
 import React from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
 import TextWidthUnderline from './TextWidthUnderline';
+import IconWidthUnderline from './IconWithUnderline';
 
-// challenge: only hooks
+
 const LaunchCard = ({ vehicle, win_open, name, weather_icon }) => {
-  console.log('CARD', vehicle);
-
   return (
     <View style={styles.launchCard}>
       <Image
-        style={{ height: 80, width: 80, borderRadius: 45 }}
+        style={{ height: 90, width: 90, borderRadius: 45 }}
         source={{
           uri:
             'https://pbs.twimg.com/profile_images/1082744382585856001/rH_k3PtQ_400x400.jpg',
         }}
       />
-      <View style={styles.launchCard__section}>
-        <TextWidthUnderline value="Т -0" />
-        <TextWidthUnderline value="Ракета-носитель" />
-        <TextWidthUnderline value="Миссия" />
-        <TextWidthUnderline value="Погода" />
+      <View style={styles.launchCard__icons}>
+        <IconWidthUnderline value="⏳" />
+        <IconWidthUnderline value="🚀" />
+        <IconWidthUnderline value="📃" />
+        <IconWidthUnderline value="☁" />
       </View>
       <View style={styles.launchCard__section}>
         <TextWidthUnderline value={win_open || 'Неизвестно'} />
@@ -56,5 +55,6 @@ const styles = StyleSheet.create({
 
   launchCard__section: {
     margin: 5,
+    width: '60%',
   },
 });
