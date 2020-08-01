@@ -3,8 +3,6 @@ import * as Permissions from 'expo-permissions';
 import React from 'react';
 import Reminder from './Reminder';
 
-const CalendarName = 'Пусковые окна';
-
 const ReminderCont = ({ win_open, win_close, name }) => {
   return (
     <Reminder
@@ -30,7 +28,6 @@ const createReminder = async (win_open, win_close, name) => {
     const editableCalendar = calendars.find((item) => {
       return item.allowsModifications === true;
     });
-    console.log(win_open + 'начало', win_close + 'конец');
     Calendar.createEventAsync(editableCalendar.id, {
       title: 'Пуск ракеты',
       notes: name,
