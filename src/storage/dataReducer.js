@@ -1,4 +1,4 @@
-import { LaunchAPI, API } from './LaunchAPI/index';
+import {  API } from './LaunchAPI/index';
 
 const types = {
   FETCH_ALL: 'FETCH_ALL',

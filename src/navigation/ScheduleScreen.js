@@ -24,13 +24,15 @@ class ScheduleScreen extends React.Component {
           <FlatList
             data={this.props.launches}
             renderItem={({ item }) => {
+              console.log(item);
               return (
                 <LaunchCardCont
-                  key={item.key}
+                  key={item.id.toString()}
                   vehicle={item.vehicle.name}
                   win_open={item.win_open}
                   name={item.name}
                   weather_icon={item.weather_icon}
+                  win_close={item.win_close}
                 />
               );
             }}
