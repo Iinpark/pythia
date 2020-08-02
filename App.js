@@ -1,8 +1,7 @@
 import React from 'react';
-import RootRouter from './navigation/RootRouter';
+import RootRouter from './src/navigation/RootRouter';
 import { Provider } from 'react-redux';
-import { Storage } from './storage/storage';
-
+import { Storage } from './src/storage/storage';
 
 export default function App() {
   return (

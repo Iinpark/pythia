@@ -8,9 +8,10 @@ const globe = require('../assets/globe.png');
 const AppHeader = ({ toggleDrawer }) => {
   return (
     <View style={s.main}>
-      <TouchableOpacity onPress={toggleDrawer}>
+      {/* кнопка открывающая бургер меню */}
+      {/* <TouchableOpacity onPress={toggleDrawer}>
         <Image style={s.icon} source={burger} />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <Image style={s.icon} source={globe} />
     </View>
   );

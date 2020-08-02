@@ -7,7 +7,6 @@ import { CustomDrawerContent } from '@components';
 import { AppHeaderCont } from '@containers';
 import { drawerStyle, labelStyle } from '@common';
 //screens
-import CompaniesScreen from './CompaniesScreen';
 import ScheduleScreen from './ScheduleScreen';
 import LaunchScreen from './LaunchScreen';
 
@@ -20,11 +19,11 @@ const DrawerNavigator = () => {
     <Drawer.Navigator
       initialRouteName="ScheduleScreen"
       drawerType="back"
+      edgeWidth={0}
       backBehavior="none"
       drawerStyle={drawerStyle}
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       overlayColor="rgba(0.0.0.0)">
-      <Drawer.Screen name="CompaniesScreen" component={CompaniesScreen} />
       <Drawer.Screen name="ScheduleScreen" component={ScheduleScreen} />
     </Drawer.Navigator>
   );
