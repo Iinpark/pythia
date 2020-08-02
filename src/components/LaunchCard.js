@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
 import TextWidthUnderline from './TextWidthUnderline';
 import IconWidthUnderline from './IconWithUnderline';
+import { ReminderCont } from '@notifications';
 
-
-const LaunchCard = ({ vehicle, win_open, name, weather_icon }) => {
+const LaunchCard = ({ vehicle, win_open, name, weather_icon, win_close }) => {
   return (
     <View style={styles.launchCard}>
       <Image
@@ -26,6 +26,7 @@ const LaunchCard = ({ vehicle, win_open, name, weather_icon }) => {
         <TextWidthUnderline value={name || 'Неизвестно'} />
         <TextWidthUnderline value={weather_icon || 'Неизвестно'} />
       </View>
+      <ReminderCont win_open={win_open} win_close={win_close} name={name} />
     </View>
   );
 };
@@ -55,6 +56,6 @@ const styles = StyleSheet.create({
 
   launchCard__section: {
     margin: 5,
-    width: '60%',
+    width: '45%',
   },
 });

@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Image, TouchableHighlight, Text } from 'react-native';
+import { Image, TouchableHighlight } from 'react-native';
+
+const addEventIcon = require('../assets/add_event.png');
 
 const Reminder = ({ createReminder }) => {
   return (
     <TouchableHighlight onPress={() => createReminder()}>
-      <Text style={{ color: 'white' }}>Установить Напоминание</Text>
+      <Image style={{ height: 20, width: 20 }} source={addEventIcon} />
     </TouchableHighlight>
   );
 };

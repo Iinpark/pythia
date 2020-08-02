@@ -24,7 +24,6 @@ class ScheduleScreen extends React.Component {
           <FlatList
             data={this.props.launches}
             renderItem={({ item }) => {
-              console.log(item);
               return (
                 <LaunchCardCont
                   key={item.id.toString()}
