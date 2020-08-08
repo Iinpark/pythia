@@ -1,25 +1,26 @@
 {
   "expo": {
-    "name": "Orbital Rocket Looker",
-    "slug": "pythia",
-    "version": "1.0.0",
+    "name": "Discovery",
+    "slug": "discovery",
+    "version": "0.1",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "splash": {
       "image": "./src/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "Earth.SultanEsbolatov.Discovery",
+      "supportsTablet": false,
+       "buildNumber": "0.1"
     },
-     "android": {
+    "android": {
+      "package": "Earth.SultanEsbolatov.Discovery",
       "useNextNotificationsApi": true
     },
     "web": {
