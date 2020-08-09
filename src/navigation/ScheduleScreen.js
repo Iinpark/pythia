@@ -26,7 +26,7 @@ class ScheduleScreen extends React.Component {
             renderItem={({ item }) => {
               return (
                 <LaunchCardCont
-                  key={item.id.toString()}
+                  key={item.name}
                   vehicle={item.vehicle.name}
                   win_open={item.win_open}
                   name={item.name}

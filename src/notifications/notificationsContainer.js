@@ -18,7 +18,7 @@ const ReminderCont = ({ win_open, win_close, name }) => {
 export default ReminderCont;
 
 const createReminder = async (win_open, win_close, name) => {
-  const { status } = await Permissions.getAsync(
+  const { status } = await Permissions.askAsync(
     Permissions.CALENDAR,
     Permissions.REMINDERS
   );

@@ -2,7 +2,7 @@
   "expo": {
     "name": "Discovery",
     "slug": "discovery",
-    "version": "0.1",
+    "version": "0.2",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "splash": {
@@ -17,11 +17,12 @@
     "ios": {
       "bundleIdentifier": "Earth.SultanEsbolatov.Discovery",
       "supportsTablet": false,
-       "buildNumber": "0.1"
+      "buildNumber": "0.2"
     },
     "android": {
       "package": "Earth.SultanEsbolatov.Discovery",
-      "useNextNotificationsApi": true
+      "useNextNotificationsApi": true,
+      "permissions": ["READ_CALENDAR", "WRITE_CALENDAR"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
