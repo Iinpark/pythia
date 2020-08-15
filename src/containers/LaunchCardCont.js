@@ -3,22 +3,25 @@ import { View } from 'react-native';
 import { LaunchCard } from '@components';
 import { ReminderCont } from '@notifications';
 
-const LaunchCardCont = ({
-  vehicle,
-  win_open,
-  win_close,
-  name,
-  weather_icon,
-}) => {
-  const window_start_string = new Date(win_open).toLocaleString();
+const dateOptions = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  weekday: 'long',
+  timezone: 'UTC',
+  hour: 'numeric',
+  minute: 'numeric',
+};
 
+const LaunchCardCont = ({ vehicle, win_open, win_close, name }) => {
+  let window_start_string = new Date(win_open);
+  window_start_string = window_start_string.toLocaleString('ru', dateOptions);
   return (
     <View>
       <LaunchCard
         vehicle={vehicle}
         win_open={win_open === null ? 'НЕИЗВЕСТНО' : window_start_string}
         name={name}
-        weather_icon={weather_icon}
         win_close={win_close}
       />
     </View>

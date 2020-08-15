@@ -4,7 +4,7 @@ import TextWidthUnderline from './TextWidthUnderline';
 import IconWidthUnderline from './IconWithUnderline';
 import { ReminderCont } from '@notifications';
 
-const LaunchCard = ({ vehicle, win_open, name, weather_icon, win_close }) => {
+const LaunchCard = ({ vehicle, win_open, name, win_close }) => {
   return (
     <View style={styles.launchCard}>
       <Image
@@ -18,13 +18,11 @@ const LaunchCard = ({ vehicle, win_open, name, weather_icon, win_close }) => {
         <IconWidthUnderline value="⏳" />
         <IconWidthUnderline value="🚀" />
         <IconWidthUnderline value="📃" />
-        <IconWidthUnderline value="☁" />
       </View>
       <View style={styles.launchCard__section}>
         <TextWidthUnderline value={win_open || 'Неизвестно'} />
         <TextWidthUnderline value={vehicle || 'Неизвестно'} />
         <TextWidthUnderline value={name || 'Неизвестно'} />
-        <TextWidthUnderline value={weather_icon || 'Неизвестно'} />
       </View>
       <ReminderCont win_open={win_open} win_close={win_close} name={name} />
     </View>
@@ -39,6 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.3)',
 
     width: 330,
+    height: 93,
 
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -49,13 +48,20 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 3,
 
     paddingVertical: 1,
-    paddingLeft: 2,
+    paddingLeft: 1,
 
     marginVertical: 3,
   },
 
+  launchCard__icons: {
+    margin: 5,
+    height: '100%',
+    justifyContent: 'space-around',
+  },
   launchCard__section: {
     margin: 5,
     width: '45%',
+    height: '100%',
+    justifyContent: 'space-around',
   },
 });
