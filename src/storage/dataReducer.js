@@ -1,4 +1,4 @@
-import {  API } from './LaunchAPI/index';
+import { API } from './LaunchAPI/index';
 
 const types = {
   FETCH_ALL: 'FETCH_ALL',
@@ -24,13 +24,14 @@ export const actions = {
 
 const initialState = {
   launches: null,
+  isLoading: true,
 };
 
 export const reducer = (state = initialState, action) => {
   const { data } = action;
   switch (action.type) {
     case types.FETCH_OK:
-      return { ...state, launches: data.result};
+      return { ...state, launches: data.result, isLoading: false };
     default:
       return { ...state };
   }

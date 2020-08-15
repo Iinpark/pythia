@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import { LaunchCardCont } from '@containers';
+import { Skeleton, LaunchCardSkeleton } from '@components';
 import Screen from './Screen';
 import { connect } from 'react-redux';
 import { actions } from '../storage/dataReducer';
@@ -32,6 +33,7 @@ class ScheduleScreen extends React.Component {
                   name={item.name}
                   weather_icon={item.weather_icon}
                   win_close={item.win_close}
+                  isLoading={this.props.isLoading}
                 />
               );
             }}
@@ -59,6 +61,7 @@ const mapDispatch = (dispatch) => {
 const mapState = (state) => {
   return {
     launches: state.launches,
+    isLoading: state.isLoading,
   };
 };
 export default connect(mapState, mapDispatch)(ScheduleScreen);
