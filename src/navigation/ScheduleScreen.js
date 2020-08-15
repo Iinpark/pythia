@@ -18,26 +18,37 @@ class ScheduleScreen extends React.Component {
     this.props.fetchAll();
   }
 
+  SkeletonPlaceholder = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 0);
+
   render() {
     return (
       <Screen>
         <View style={styles.main}>
-          <FlatList
-            data={this.props.launches}
-            renderItem={({ item }) => {
-              return (
-                <LaunchCardCont
-                  key={item.name}
-                  vehicle={item.vehicle.name}
-                  win_open={item.win_open}
-                  name={item.name}
-                  weather_icon={item.weather_icon}
-                  win_close={item.win_close}
-                  isLoading={this.props.isLoading}
-                />
-              );
-            }}
-          />
+          {this.props.isLoading ? (
+            <FlatList
+              data={this.SkeletonPlaceholder}
+              renderItem={() => {
+                return <LaunchCardSkeleton />;
+              }}
+            />
+          ) : (
+            <FlatList
+              data={this.props.launches}
+              renderItem={({ item }) => {
+                return (
+                  <LaunchCardCont
+                    key={item.name}
+                    vehicle={item.vehicle.name}
+                    win_open={item.win_open}
+                    name={item.name}
+                    weather_icon={item.weather_icon}
+                    win_close={item.win_close}
+                    isLoading={this.props.isLoading}
+                  />
+                );
+              }}
+            />
+          )}
         </View>
       </Screen>
     );
